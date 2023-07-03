@@ -2,6 +2,20 @@
 
 pragma solidity 0.8.15;
 
+/*
+The SampleWallet contract allows for ownership transfer, setting allowances, and transferring ETH/wei etc:
+
+Ownership can be transferred by designated guardians proposing a new owner.
+The owner can set allowances for specific addresses to send ETH from the contract.
+The owner can deny sending permissions for specific addresses.
+Authorized addresses can transfer ETH from the contract to other addresses.
+The owner can directly transfer ETH from the contract to other addresses.
+The contract includes a fallback function to receive ETH.
+The contract utilizes mappings and variables to track allowances, permissions, guardians, and the current owner.
+
+*/
+
+
 contract SampleWallet {
 
     address payable public owner;
