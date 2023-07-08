@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity 0.8.16;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
@@ -16,19 +16,17 @@ contract CoffeeToken is ERC20, AccessControl {
     }
 
     function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {
-        _mint(to, amount);
+        _mint(to, amount * 10 ** decimals());
     }
 
     function byeOneCoffee() public{
-        _burn(_msgSender(),1);
+        _burn(_msgSender(), 1 * 10 ** decimals());
         emit CoffeePurchased(_msgSender(), _msgSender());
     }
 
     function buyOneCoffeeFrom(address account) public {
-        _spendAllowance(account, _msgSender(), 1);
-        _burn(account, 1);
+        _spendAllowance(account, _msgSender(), 1 * 10 ** decimals());
+        _burn(account, 1 * 10 ** decimals());
         emit CoffeePurchased(_msgSender(), account);
     }
 }
-
-//To be continue
