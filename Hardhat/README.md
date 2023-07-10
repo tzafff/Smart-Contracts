@@ -45,11 +45,3 @@ Replace `<network_name>` with the appropriate network identifier from your Hardh
 ## Acknowledgments
 This project was developed with the help of Hardhat's comprehensive documentation and community resources. Special thanks to the Hardhat development team and the Ethereum community for their valuable contributions.
 
-## Contact Information
-If you have any questions or suggestions regarding this project, please feel free to reach out to the project creator:
-
-- Name: [Your Name]
-- Email: [Your Email]
-- GitHub: [Your GitHub Profile URL]
-
-Thank you for your interest in this project!
